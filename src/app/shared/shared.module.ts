@@ -9,13 +9,6 @@ import { AlainThemeModule } from '@delon/theme';
 import { AlainABCModule, SimpleTableConfig, ReuseTabService, ReuseTabStrategy } from '@delon/abc';
 import { AlainACLModule } from '@delon/acl';
 
-// third libs
-import { CountdownModule } from 'ngx-countdown';
-
-// i18n
-import { TranslateModule } from '@ngx-translate/core';
-import { I18NService } from '@core/i18n/i18n.service';
-
 // region: zorro modules
 
 import {
@@ -181,9 +174,7 @@ const ABCMODULES = [
         NgZorroAntdExtraModule.forRoot(),
         AlainThemeModule.forChild(),
         ...ABCMODULES,
-        AlainACLModule.forRoot(),
-        // third libs
-        CountdownModule
+        AlainACLModule.forRoot()
     ],
     exports: [
         CommonModule,
@@ -194,11 +185,7 @@ const ABCMODULES = [
         NgZorroAntdExtraModule,
         AlainThemeModule,
         ...ABCMODULES,
-        AlainACLModule,
-        // i18n
-        TranslateModule,
-        // third libs
-        CountdownModule
+        AlainACLModule
     ]
 })
 export class SharedModule {

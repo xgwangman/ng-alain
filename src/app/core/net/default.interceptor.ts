@@ -25,9 +25,6 @@ export class DefaultInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler):
         Observable<HttpSentEvent | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
 
-        // TIPS：原TOKEN信息已交由 `@delon/auth` 处理
-        // Document: http://ng-alain.com/docs/auth
-
         // 统一加上服务端前缀
         let url = req.url;
         if (!url.startsWith('https://') && !url.startsWith('http://')) {
